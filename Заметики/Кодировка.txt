@@ -1,0 +1,9 @@
+﻿Устанавливаем стандартную внешнюю кодировку = utf8
+Начать файл со строк (с символом # включительно)
+# coding: utf8
+
+При необходимости добавить 
+
+import sys
+import codecs
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())

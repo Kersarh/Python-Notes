@@ -1,0 +1,10 @@
+Добавить в шаблон
+
+{% autoescape off %}
+{% endautoescape %}
+
+если off в ээтом промежутке будет поддерживаться HTML
+
+{% autoescape off %}
+{{ post.content|linebreaksbr }}
+{% endautoescape %}

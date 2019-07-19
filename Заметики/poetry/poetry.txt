@@ -1,0 +1,43 @@
+—траница документации 
+https://poetry.eustace.io/docs/
+
+установка
+# pip install poetry
+
+ѕроверить настройки 
+# poetry config --list
+
+ƒл€ сохранени€ venv в папке проекта
+# poetry config settings.virtualenvs.in-project true
+
+файл pyproject.toml в интерактивном режиме
+# poetry init
+
+—оздать проект
+# poetry new poetry-demo
+
+установить пакет 
+# poetry add pyqt5
+
+”становка всех зависимостей из poetry.lock
+# poetry install
+
+ѕодготовка пакета к публикации
+Ёта команда упакует вашу библиотеку в два разных формата:
+исходники и wheel, который €вл€етс€ скомпилированным пакетом.
+# poetry build
+
+дл€ публикации
+# poetry publish
+
+дл€ публикации в частном репозитории
+# poetry publish -r my-repository
+
+ƒобавить репозиторий
+Ёто установит URL-адрес дл€ хранилища foo на https://foo.bar/simple/.
+# poetry config repositories.foo https://foo.bar/simple/
+
+≈сли вы хотите сохранить свои учетные данные дл€ определенного репозитори€:
+# poetry config http-basic.foo username password
+
+

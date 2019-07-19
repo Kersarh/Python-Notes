@@ -1,0 +1,15 @@
+# Обновить PIP
+>> python -m pip install --upgrade pip
+
+# Устаревшие пакеты
+>> pip list --outdated
+
+# Создать файл зависимостей в текущем каталоге
+>> pip freeze > requirements.txt  # создать файл с зависимостями
+>> pip install -r requirements.txt --upgrade
+
+Установка зависимостей из файла 
+>> pip install -r requirements.txt
+
+# Апдейт всех для win в командной строке
+>> for /F "delims===" %i in ('pip freeze -l') do pip install -U %i

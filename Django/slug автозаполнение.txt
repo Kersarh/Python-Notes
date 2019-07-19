@@ -1,0 +1,14 @@
+јвтозаполнение пол€ slug, дл€ генерации автоматического url новости из названи€.
+
+ћодель дл€ которой нужно сделать авто заполнение пол€.
+
+class Post(models.Model):     
+        title = models.CharField(verbose_name='Ќазвание', max_length=60)     
+        slug = models.SlugField(verbose_name='URL')
+
+–егистрируем модель в админке, и создаем класс.
+
+class PostAdmin(admin.ModelAdmin):     
+        prepopulated_fields = {"slug": ("title",)}
+
+admin.site.register(Post,PostAdmin)

@@ -1,0 +1,21 @@
+# ќпредел€ем отношени€, у Post-а может быть много Tags, и Tags может встречатьс€ во многих Post. 
+
+class Tags(models.Model):
+    title = models.CharField(max_length=50)
+
+class Post(models.Model):
+    name = models.CharField(max_length=50)
+    content = content = HTMLField()
+    tags = models.ManyToManyField(Tags)
+
+viev.py
+def home(request):
+    posts = Post.objects.filter(visible='1')
+    return render(request, "partial/home.html", {'posts': posts})
+
+„тобы вывести в шаблон tags
+{% for post in posts %}
+    {% for tag in post.tags.all %}
+        {{ tag }}
+    {% endfor %}
+{% endfor %}

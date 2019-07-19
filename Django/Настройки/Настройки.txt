@@ -1,0 +1,28 @@
+# ’ранение статических файлов
+# файлы собираютс€ командой manage.py collectstatic
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# ћедиа файлы
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+# ѕапка хранени€ шаблонов
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+TEMPLATES = [
+    {
+        # ...
+        'DIRS': [TEMPLATE_DIR],
+        # ...
+            ],
+        },
+    },
+]
+
+# „асовой по€с 
+TIME_ZONE = 'Europe/Moscow'
+
+# язык 
+LANGUAGE_CODE = 'ru-ru'

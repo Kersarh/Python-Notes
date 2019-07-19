@@ -1,0 +1,15 @@
+Если в Windows не работает 
+>> pip install pylint
+
+Вводим в консоль
+>> chcp 65001 && pip install pylint
+>> run chcp 65001
+>> pip install pylint
+
+Или одной строкой
+>> chcp 65001 && pip install pylint && chcp 866 && pip install pylint
+__________
+В корне проекта можно создать файл конфигурации командой:
+>> pylint --generate-rcfile > .pylintrc
+__________
+

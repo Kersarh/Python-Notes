@@ -1,0 +1,5 @@
+text
+name = ##NAME##
+text
+mail = ##mail##
+text

@@ -1,0 +1,30 @@
+Установка
+# pip install django
+
+Создать проект
+# django-admin startproject project_name
+
+Создать приложение
+# python manage.py startapp app_name 
+или    # manage.py startapp app_name
+
+Запустить сервер
+# python manage.py runserver
+
+Создать админа
+# manage.py migrate
+# manage.py createsuperuser
+
+manage.py migrate --fake-initial
+
+manage.py collectstatic 
+проходит по STATICFILES_FINDERS и копирует все статичные файлы из папок static приложений,
+а также из папок, перечисленных в STATICFILES_DIRS, в заданную вами в STATIC_ROOT директорию.
+Это позволяет разрешать ресурсы в виде статичных данных с помощью той же логики, что и у Django-сервера в режиме разработки,
+и собирать в одном месте для веб-сервера все статичные файлы.
+
+Для корректной работы 
+pylint может потребоваться модуль pylint-django
+в VSCode добавить в настройки 
+"python.linting.pylintArgs": [
+        "--load-plugins", "pylint_django"],

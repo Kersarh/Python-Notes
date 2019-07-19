@@ -1,0 +1,3 @@
+conda в составе Anaconda или Miniconda
+
+conda create -p C:\ENV_FOLDER --copy --yes python=3.7.2 conda
