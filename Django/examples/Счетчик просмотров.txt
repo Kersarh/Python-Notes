@@ -1,0 +1,26 @@
+Задаем поле счетчик с модели
+# models.py
+class Blog(models.Model):
+    # your code
+    blog_views=models.IntegerField(default=0)
+
+Добавляем обработку открытия 
+# views.py FBV
+def blog_post(request,post_id):
+    #your code
+    blog_object=Blog.objects.get(id=post_id)
+    blog_object.blog_views += 1
+    blog_object.save()
+    #your code
+
+# views.py CBV
+class DetailPost(DetailView):
+    model = Blog
+    template_name = 'detail.html'
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.blog_views += 1
+        self.object.save()
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
