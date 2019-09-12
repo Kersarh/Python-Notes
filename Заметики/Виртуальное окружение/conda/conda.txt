@@ -1,3 +1,16 @@
-conda в составе Anaconda или Miniconda
+# conda в составе Anaconda или Miniconda
 
+#  оманды
+    conda search package_name Ч поиск пакета через conda
+    conda install package_name Ч установка пакета через conda
+    conda install Ч установка всего стандартного набора пакетов Ч более 150, около 3 √б
+    conda list Ч список установленных пакетов
+    conda update conda Ч обновление conda
+    conda update --all Ч обновление всего возможного
+    conda clean -t Ч удаление кеша Ч архивов .tar.bz2, которые могут занимать много места и не нужны
+
+
+
+# создать виртуальное окружение
 conda create -p C:\ENV_FOLDER --copy --yes python=3.7.2 conda
+

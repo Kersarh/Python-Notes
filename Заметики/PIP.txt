@@ -11,5 +11,8 @@
 Установка зависимостей из файла 
 >> pip install -r requirements.txt
 
-# Апдейт всех для win в командной строке
+# Upgrade зависимостей из файла requirements.txt
+pip install --upgrade -r requirements.txt
+
+# Upgrade всех для win в командной строке
 >> for /F "delims===" %i in ('pip freeze -l') do pip install -U %i
