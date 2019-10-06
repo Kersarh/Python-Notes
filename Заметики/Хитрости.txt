@@ -1,3 +1,3 @@
-êîìàíäà â çàâèñèìîñòè îò ÎÑ
+ÐšÐ¾Ð¼Ð°Ð½Ð´Ð° Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ ÐžÐ¡
 >> os.system('cls' if os.name == 'nt' else 'clear')
 >> os.system('pause' if os.name == 'nt' else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

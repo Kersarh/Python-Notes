@@ -1,10 +1,10 @@
-Задаем поле счетчик с модели
+Р—Р°РґР°РµРј РїРѕР»Рµ СЃС‡РµС‚С‡РёРє СЃ РјРѕРґРµР»Рё
 # models.py
 class Blog(models.Model):
     # your code
     blog_views=models.IntegerField(default=0)
 
-Добавляем обработку открытия 
+Р”РѕР±Р°РІР»СЏРµРј РѕР±СЂР°Р±РѕС‚РєСѓ РѕС‚РєСЂС‹С‚РёСЏ 
 # views.py FBV
 def blog_post(request,post_id):
     #your code

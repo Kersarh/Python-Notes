@@ -1,4 +1,4 @@
-# в файле views.py
+# РІ С„Р°Р№Р»Рµ views.py
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 class ListAll(ListView):
@@ -7,7 +7,7 @@ class ListAll(ListView):
     template_name = 'list.html'
 
 
-В щаблоне
+Р’ С‰Р°Р±Р»РѕРЅРµ
     {% if page_obj.has_previous %}
       <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>

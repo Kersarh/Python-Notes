@@ -17,10 +17,9 @@ args = ["ping", "google.com"]
 process = subprocess.Popen(args, stdout=subprocess.PIPE)
 data = process.communicate()
 for line in data:
-    if line:
-        line = line.strip()
-        print(line.decode('cp866'))
+	if line:
+		line = line.strip()
+		print(line.decode('cp866'))
 
-
-os.system('pause' if os.name ==
-          'nt' else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system('pause' if os.name == 'nt' else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

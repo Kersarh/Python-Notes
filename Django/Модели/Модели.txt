@@ -1,4 +1,4 @@
-# Создаем приложение 
+# РЎРѕР·РґР°РµРј РїСЂРёР»РѕР¶РµРЅРёРµ 
 python manage.py startapp blog
 
 # blog/models.py
@@ -8,7 +8,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Post(models.Model): # Post имя модели, models.Model означает, что объект Post является моделью Django, так Django поймет, что он должен сохранить его в базу данных
+class Post(models.Model): # Post РёРјСЏ РјРѕРґРµР»Рё, models.Model РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ РѕР±СЉРµРєС‚ Post СЏРІР»СЏРµС‚СЃСЏ РјРѕРґРµР»СЊСЋ Django, С‚Р°Рє Django РїРѕР№РјРµС‚, С‡С‚Рѕ РѕРЅ РґРѕР»Р¶РµРЅ СЃРѕС…СЂР°РЅРёС‚СЊ РµРіРѕ РІ Р±Р°Р·Сѓ РґР°РЅРЅС‹С…
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, verbose_name='URL')
@@ -31,9 +31,9 @@ class Post(models.Model): # Post имя модели, models.Model означает, что объект P
 
 #------------------------------
 
-# Создаём таблицы моделей в базе данных
-# Сохдаем файл миграции
+# РЎРѕР·РґР°С‘Рј С‚Р°Р±Р»РёС†С‹ РјРѕРґРµР»РµР№ РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С…
+# РЎРѕР·РґР°РµРј С„Р°Р№Р» РјРёРіСЂР°С†РёРё
 python manage.py makemigrations blog
 
-# Вносим данные и базу
+# Р’РЅРѕСЃРёРј РґР°РЅРЅС‹Рµ Рё Р±Р°Р·Сѓ
 python manage.py migrate blog

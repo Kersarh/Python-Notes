@@ -1,18 +1,18 @@
-# Îáíîâèòü PIP
+# ÐžÐ±Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ PIP
 >> python -m pip install --upgrade pip
 
-# Óñòàðåâøèå ïàêåòû
+# Ð£ÑÑ‚Ð°Ñ€ÐµÐ²ÑˆÐ¸Ðµ Ð¿Ð°ÐºÐµÑ‚Ñ‹
 >> pip list --outdated
 
-# Ñîçäàòü ôàéë çàâèñèìîñòåé â òåêóùåì êàòàëîãå
->> pip freeze > requirements.txt  # ñîçäàòü ôàéë ñ çàâèñèìîñòÿìè
+# Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚ÐµÐ¹ Ð² Ñ‚ÐµÐºÑƒÑ‰ÐµÐ¼ ÐºÐ°Ñ‚Ð°Ð»Ð¾Ð³Ðµ
+>> pip freeze > requirements.txt  # ÑÐ¾Ð·Ð´Ð°Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ñ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚ÑÐ¼Ð¸
 >> pip install -r requirements.txt --upgrade
 
-Óñòàíîâêà çàâèñèìîñòåé èç ôàéëà 
+Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚ÐµÐ¹ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° 
 >> pip install -r requirements.txt
 
-# Upgrade çàâèñèìîñòåé èç ôàéëà requirements.txt
+# Upgrade Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚ÐµÐ¹ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° requirements.txt
 pip install --upgrade -r requirements.txt
 
-# Upgrade âñåõ äëÿ win â êîìàíäíîé ñòðîêå
+# Upgrade Ð²ÑÐµÑ… Ð´Ð»Ñ win Ð² ÐºÐ¾Ð¼Ð°Ð½Ð´Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐµ
 >> for /F "delims===" %i in ('pip freeze -l') do pip install -U %i

@@ -2,24 +2,31 @@
 
 from cx_Freeze import setup, Executable
 import sys
-base = 'Win32GUI' if sys.platform=='win32' else None
+base = 'Win32GUI' if sys.platform == 'win32' else None
 
-executables = [Executable('main.py',  # Главный файл программы
-                          targetName='run.exe',  # Имя exe файла
-                          base=base,
-                          icon='app.ico')]
+executables = [
+    Executable(
+        'main.py',  # Главный файл программы
+        targetName='run.exe',  # Имя exe файла
+        base=base,
+        icon='app.ico')
+]
 
 # Исключения
-excludes = ['bz2', 'hashlib', 'lzma', 'socket',
-            'ssl', 'pyexpat', 'select', 'unicodedata']
+excludes = [
+    'bz2', 'hashlib', 'lzma', 'socket', 'ssl', 'pyexpat', 'select',
+    'unicodedata'
+]
 
 # Добавить модули
 add_modul = []
 
 # Добавить модули в zip
-zip_include_packages = ['collections', 'encodings', 'importlib', 'email', 'html', 'http', 'logging',
-                        'pydoc_data', 'unittest', 'urllib', 'xml', 'bz2', 'hashlib', 'lzma', 'socket',
-                        'ssl', 'pyexpat', 'select', 'unicodedata'] + add_modul
+zip_include_packages = [
+    'collections', 'encodings', 'importlib', 'email', 'html', 'http',
+    'logging', 'pydoc_data', 'unittest', 'urllib', 'xml', 'bz2', 'hashlib',
+    'lzma', 'socket', 'ssl', 'pyexpat', 'select', 'unicodedata'
+] + add_modul
 
 # Включаемые файлы и папки проэкта
 include_files = ['data', 'file.py']

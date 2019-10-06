@@ -1,15 +1,15 @@
-# Хранение статических файлов
-# файлы собираются командой manage.py collectstatic
+# РҐСЂР°РЅРµРЅРёРµ СЃС‚Р°С‚РёС‡РµСЃРєРёС… С„Р°Р№Р»РѕРІ
+# С„Р°Р№Р»С‹ СЃРѕР±РёСЂР°СЋС‚СЃСЏ РєРѕРјР°РЅРґРѕР№ manage.py collectstatic
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-# Медиа файлы
+# РњРµРґРёР° С„Р°Р№Р»С‹
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-# Папка хранения шаблонов
+# РџР°РїРєР° С…СЂР°РЅРµРЅРёСЏ С€Р°Р±Р»РѕРЅРѕРІ
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 TEMPLATES = [
     {
@@ -21,8 +21,8 @@ TEMPLATES = [
     },
 ]
 
-# Часовой пояс 
+# Р§Р°СЃРѕРІРѕР№ РїРѕСЏСЃ 
 TIME_ZONE = 'Europe/Moscow'
 
-# Язык 
+# РЇР·С‹Рє 
 LANGUAGE_CODE = 'ru-ru'

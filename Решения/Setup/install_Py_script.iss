@@ -1,10 +1,10 @@
-; Этот сценарий создан с помощью Мастера Inno Setup.
-; ОБРАТИТЕСЬ К СПРАВОЧНОЙ ДОКУМЕНТАЦИИ, ЧТОБЫ ИСПОЛЬЗОВАТЬ ВСЕ ВОЗМОЖНОСТИ INNO SETUP!
+; Р­С‚РѕС‚ СЃС†РµРЅР°СЂРёР№ СЃРѕР·РґР°РЅ СЃ РїРѕРјРѕС‰СЊСЋ РњР°СЃС‚РµСЂР° Inno Setup.
+; РћР‘Р РђРўРРўР•РЎР¬ Рљ РЎРџР РђР’РћР§РќРћР™ Р”РћРљРЈРњР•РќРўРђР¦РР, Р§РўРћР‘Р« РРЎРџРћР›Р¬Р—РћР’РђРўР¬ Р’РЎР• Р’РћР—РњРћР–РќРћРЎРўР INNO SETUP!
 
 [Setup]
-; Примечание: Значение AppId является уникальным идентификатором для этого приложения.
-; Не используйте одно и тоже значение AppId для разных приложений.
-; (Для создания нового значения GUID, выберите в меню "Инструменты" пункт "Создать GUID".)
+; РџСЂРёРјРµС‡Р°РЅРёРµ: Р—РЅР°С‡РµРЅРёРµ AppId СЏРІР»СЏРµС‚СЃСЏ СѓРЅРёРєР°Р»СЊРЅС‹Рј РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂРѕРј РґР»СЏ СЌС‚РѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ.
+; РќРµ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ РѕРґРЅРѕ Рё С‚РѕР¶Рµ Р·РЅР°С‡РµРЅРёРµ AppId РґР»СЏ СЂР°Р·РЅС‹С… РїСЂРёР»РѕР¶РµРЅРёР№.
+; (Р”Р»СЏ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ GUID, РІС‹Р±РµСЂРёС‚Рµ РІ РјРµРЅСЋ "РРЅСЃС‚СЂСѓРјРµРЅС‚С‹" РїСѓРЅРєС‚ "РЎРѕР·РґР°С‚СЊ GUID".)
 AppId={{F5482354-0EA6-43C7-8CAD-4E5E665C1C37}
 AppName=My Program
 AppVersion=1.5
@@ -13,9 +13,9 @@ AppPublisher=My Company, Inc.
 AppPublisherURL=http://www.wylek.ru/
 AppSupportURL=http://www.wylek.ru/
 AppUpdatesURL=http://www.wylek.ru/
-DefaultDirName=C:\Users\aleks\Desktop\Новая папка\My Program
+DefaultDirName=C:\Users\aleks\Desktop\РќРѕРІР°СЏ РїР°РїРєР°\My Program
 DisableProgramGroupPage=yes
-OutputDir=C:\Users\aleks\Desktop\Новая папка
+OutputDir=C:\Users\aleks\Desktop\РќРѕРІР°СЏ РїР°РїРєР°
 OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
@@ -29,10 +29,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "F:\Projects\Py_test\main.py"; DestDir: "{app}"; Flags: ignoreversion
 Source: "F:\Projects\Py_test\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-; Примечание: Не используйте' флаги "ignoreversion" для общих системных файлов.
-; Подцепляем инсталлер PYTHON
+; РџСЂРёРјРµС‡Р°РЅРёРµ: РќРµ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ' С„Р»Р°РіРё "ignoreversion" РґР»СЏ РѕР±С‰РёС… СЃРёСЃС‚РµРјРЅС‹С… С„Р°Р№Р»РѕРІ.
+; РџРѕРґС†РµРїР»СЏРµРј РёРЅСЃС‚Р°Р»Р»СЏС‚РѕСЂ PYTHON
 Source: "C:\Users\aleks\Desktop\ters\python-3.6.2-amd64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall;
-; Подцепляем Bat для зависимостей
+; РџРѕРґС†РµРїР»СЏРµРј Bat РґР»СЏ Р·Р°РІРёСЃРёРјРѕСЃС‚РµР№
 Source: "C:\Users\aleks\Desktop\ters\run.bat"; DestDir: "{tmp}"; Flags: deleteafterinstall;
 
 [Icons]
@@ -41,8 +41,8 @@ Name: "{commondesktop}\My Program"; Filename: "{app}\main.py"; Tasks: desktopico
 
 [Run]
 Filename: "{app}\main.py"; Description: "{cm:LaunchProgram,My Program}"; Flags: shellexec postinstall skipifsilent
-; Запустить установку Python
+; Р—Р°РїСѓСЃС‚РёС‚СЊ СѓСЃС‚Р°РЅРѕРІРєСѓ Python
 Filename: {tmp}\python-3.6.2-amd64.exe; StatusMsg: Python. Please wait...
-; Запустить bat для зависимостей 
+; Р—Р°РїСѓСЃС‚РёС‚СЊ bat РґР»СЏ Р·Р°РІРёСЃРёРјРѕСЃС‚РµР№ 
 Filename: {tmp}\run.bat; StatusMsg: Python. Please wait...
 

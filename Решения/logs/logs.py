@@ -6,7 +6,7 @@ import sys
 logger = logging.getLogger('example')
 logger.setLevel(logging.DEBUG)
 
-# Cоздаём handler и задаём уровень
+# Создаем handler и задаём уровень
 handl = logging.StreamHandler()
 handl.setLevel(logging.DEBUG)
 
@@ -31,5 +31,5 @@ logger.error('Error message')
 # Сообщение критическое
 logger.critical('Critical message')
 
-os.system('pause' if os.name == 'nt'
-          else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system('pause' if os.name == 'nt' else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

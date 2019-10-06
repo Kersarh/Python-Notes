@@ -29,5 +29,4 @@ d = datetime.date.today()
 print(d)
 print(d.strftime("%d.%m.%Y"))
 
-
 os.system("pause")

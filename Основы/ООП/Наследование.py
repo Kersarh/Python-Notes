@@ -3,13 +3,13 @@ import os
 
 
 class A:
-    def prt_a(self):
-        print("class A")
+	def prt_a(self):
+		print("class A")
 
 
 class B(A):
-    def prt_b(self):
-        print("class B")
+	def prt_b(self):
+		print("class B")
 
 
 b = B()
@@ -19,17 +19,17 @@ b.prt_b()
 
 # Множественно наследование
 class Base1:
-    def basemethod(self):
-        return "Hello"
+	def basemethod(self):
+		return "Hello"
 
 
 class Base2:
-    value = 44
+	value = 44
 
 
 class MyClass(Base1, Base2):
-    def __init__(self):
-        self.a = 10
+	def __init__(self):
+		self.a = 10
 
 
 obj = MyClass()

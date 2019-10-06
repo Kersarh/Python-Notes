@@ -7,5 +7,5 @@ print(t[1])  # Извлекаем второй элемент
 t = ((1, 2, 3, 4), (5, 6, 7, 8, 9))
 print(t[1][3])
 
-
-os.system('pause' if os.name == 'nt' else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system('pause' if os.name == 'nt' else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

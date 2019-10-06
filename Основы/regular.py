@@ -4,7 +4,7 @@ import os
 import re
 
 # [a-z]+ = регулярное выражение
-p = re.compile('[a-z]+') 
+p = re.compile('[a-z]+')
 
 # match() 	Определить, начинается ли совпадение регулярного выражения с начала строки
 # search() 	Сканировать всю строку в поисках всех мест совпадений с регулярным выражением
@@ -22,13 +22,12 @@ print(m)
 # end() 	Вернуть позицию конца совпадения
 # span() 	Вернуть кортеж (start, end) позиций совпадения
 
-if m != None:  # если в m чтото есть то вывести на экран
-    print(m.group())
-    print(m.start(), m.end())
-    print(m.span())
+if m != None:  # если в m что-то есть то вывести на экран
+	print(m.group())
+	print(m.start(), m.end())
+	print(m.span())
 else:
-    print("no_data")
-
+	print("no_data")
 
 print("-- SEARCH --")
 
@@ -37,18 +36,15 @@ print(m)
 print(m.group())
 print(m.span())
 
-
 print("-- FINDALL --")
 m = p.findall('1111test222user333')
 print(m)
-
 
 print("-- FINDITER --")
 iterator = p.finditer('1111test222user333')
 print(iterator)
 for i in iterator:
-    print(i.span())
-
+	print(i.span())
 
 # Функции на уровне модуля + Флаги компиляции
 #DOTALL, S
@@ -85,4 +81,5 @@ for i in iterator:
 
 print(re.findall(r"From\w+", "Fromage amk fROMsdf sdfsd", re.IGNORECASE))
 
-os.system('pause' if os.name == 'nt' else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system('pause' if os.name == 'nt' else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

@@ -9,10 +9,10 @@ name = cookie.get("name")
 
 # Если куки нет то установить else вывести то что есть
 if name is None:
-    print("Set-cookie: name=test_cookie_value")
-    print("Content-type: text/html\n")
-    print("Cookies Install!!!")
+	print("Set-cookie: name=test_cookie_value")
+	print("Content-type: text/html\n")
+	print("Cookies Install!!!")
 else:
-    print("Content-type: text/html\n")
-    print("Cookies read:")
-    print(name.value)
+	print("Content-type: text/html\n")
+	print("Cookies read:")
+	print(name.value)

@@ -1,4 +1,4 @@
-# Определяем отношения, у Post-а может быть много Tags, и Tags может встречаться во многих Post. 
+# РћРїСЂРµРґРµР»СЏРµРј РѕС‚РЅРѕС€РµРЅРёСЏ, Сѓ Post-Р° РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРЅРѕРіРѕ Tags, Рё Tags РјРѕР¶РµС‚ РІСЃС‚СЂРµС‡Р°С‚СЊСЃСЏ РІРѕ РјРЅРѕРіРёС… Post. 
 
 class Tags(models.Model):
     title = models.CharField(max_length=50)
@@ -13,7 +13,7 @@ def home(request):
     posts = Post.objects.filter(visible='1')
     return render(request, "partial/home.html", {'posts': posts})
 
-Чтобы вывести в шаблон tags
+Р§С‚РѕР±С‹ РІС‹РІРµСЃС‚Рё РІ С€Р°Р±Р»РѕРЅ tags
 {% for post in posts %}
     {% for tag in post.tags.all %}
         {{ tag }}

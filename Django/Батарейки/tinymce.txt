@@ -1,30 +1,30 @@
 pip install django-tinymce
 
-в settings.py добавить
+РІ settings.py РґРѕР±Р°РІРёС‚СЊ
 INSTALLED_APPS = [
     ...
     'tinymce',
 ]
-и по желанию 
+Рё РїРѕ Р¶РµР»Р°РЅРёСЋ 
 TINYMCE_DEFAULT_CONFIG={
     'theme' : "advanced",
     'plugins': "table,spellchecker,paste,searchreplace",
-    'forced_root_block' : '', # отключаем добавление тега <p>
+    'forced_root_block' : '', # РѕС‚РєР»СЋС‡Р°РµРј РґРѕР±Р°РІР»РµРЅРёРµ С‚РµРіР° <p>
     }
 
 
-в urls.py добавить
+РІ urls.py РґРѕР±Р°РІРёС‚СЊ
 urlpatterns = [
     ...
     re_path(r'^tinymce/', include('tinymce.urls')),
 ]
 
 
-в models.py добавить 
+РІ models.py РґРѕР±Р°РІРёС‚СЊ 
 from tinymce.models import HTMLField
 ...
-content = HTMLField()  # поле для которого будет работать tinymce в место TextField()
+content = HTMLField()  # РїРѕР»Рµ РґР»СЏ РєРѕС‚РѕСЂРѕРіРѕ Р±СѓРґРµС‚ СЂР°Р±РѕС‚Р°С‚СЊ tinymce РІ РјРµСЃС‚Рѕ TextField()
 ...
 
-и выполнить 
+Рё РІС‹РїРѕР»РЅРёС‚СЊ 
 manage.py collectstatic

@@ -22,16 +22,15 @@ h = hashlib.md5(ps.encode('utf-8'))
 p = h.hexdigest()
 print("p = ", p, "\n")
 
-
-
 # Пароль, введенный пользователем
-import getpass # не хранить пароль в логах консоли
+import getpass  # не хранить пароль в логах консоли
 ps_inp = getpass.getpass(prompt="Enter secret password:")
 
 h2 = hashlib.md5(ps_inp.encode('utf-8'))
-if p == h2.hexdigest(): # сравнение с хешем в базе
-    print("Password is correct!!!")
+if p == h2.hexdigest():  # сравнение с хешем в базе
+	print("Password is correct!!!")
 else:
-    print("Wrong password!")
+	print("Wrong password!")
 
-os.system('pause' if os.name == 'nt' else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system('pause' if os.name == 'nt' else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

@@ -1,7 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-
 import cgi
 import html
 import http.cookies
@@ -18,31 +17,31 @@ wall = Wall()
 cookie = http.cookies.SimpleCookie(os.environ.get("HTTP_COOKIE"))
 session = cookie.get("session")
 if session is not None:
-    session = session.value
+	session = session.value
 user = wall.find_cookie(session)  # Ищем пользователя по переданной куке
 
 form = cgi.FieldStorage()
 action = form.getfirst("action", "")
 
 if action == "publish":
-    text = form.getfirst("text", "")
-    text = html.escape(text)
-    if text and user is not None:
-        wall.publish(user, text)
+	text = form.getfirst("text", "")
+	text = html.escape(text)
+	if text and user is not None:
+		wall.publish(user, text)
 elif action == "login":
-    login = form.getfirst("login", "")
-    login = html.escape(login)
-    password = form.getfirst("password", "")
-    password = html.escape(password)
-    if wall.find(login, password):
-        cookie = wall.set_cookie(login)
-        print('Set-cookie: session={}'.format(cookie))
-    elif wall.find(login):
-        pass  # А надо бы предупреждение выдать
-    else:
-        wall.register(login, password)
-        cookie = wall.set_cookie(login)
-        print('Set-cookie: session={}'.format(cookie))
+	login = form.getfirst("login", "")
+	login = html.escape(login)
+	password = form.getfirst("password", "")
+	password = html.escape(password)
+	if wall.find(login, password):
+		cookie = wall.set_cookie(login)
+		print('Set-cookie: session={}'.format(cookie))
+	elif wall.find(login):
+		pass  # А надо бы предупреждение выдать
+	else:
+		wall.register(login, password)
+		cookie = wall.set_cookie(login)
+		print('Set-cookie: session={}'.format(cookie))
 
 pattern = '''
 <!DOCTYPE HTML>
@@ -68,7 +67,7 @@ pattern = '''
 '''
 
 if user is not None:
-    pub = '''
+	pub = '''
     <form action="/cgi-bin/wall.py">
         <textarea name="text"></textarea>
         <input type="hidden" name="action" value="publish">
@@ -76,7 +75,7 @@ if user is not None:
     </form>
     '''
 else:
-    pub = ''
+	pub = ''
 
 print('Content-type: text/html\n')
 

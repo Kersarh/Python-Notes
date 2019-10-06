@@ -1,9 +1,9 @@
-# в файле views.py
+# РІ С„Р°Р№Р»Рµ views.py
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 def home(request):
     postList = Post.objects.filter(visible='1')
-    paginator = Paginator(postList, 4) # 4 поста на страницу
+    paginator = Paginator(postList, 4) # 4 РїРѕСЃС‚Р° РЅР° СЃС‚СЂР°РЅРёС†Сѓ
     page = request.GET.get('page')
     try:
         querysetGoods = paginator.get_page(page)
@@ -15,7 +15,7 @@ def home(request):
     return render(request, "partial/home.html", {'posts': querysetGoods})
 
 
-В щаблоне
+Р’ С‰Р°Р±Р»РѕРЅРµ
 
 <div class="pagination">
     {% if posts.has_previous %}
