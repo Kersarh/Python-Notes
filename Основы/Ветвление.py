@@ -27,23 +27,29 @@ if i in ["y", "Y"]:
 if i not in ["n", "N"]:
 	print('ОШИБКА! {} NOT ["n", "N"]'.format(i))
 
+# проверяет есть ли x и присваивает его python 3.8
+p = {'foo': 'bar'}
+if x := p.get('foo'):
+	print(x)
 
 # Альтернатива множественным if - else
 def fun1(a):
 	print("msg" + a)
-
-
 def fun2():
 	print("msg2")
 
 
 method = {
-    "test": fun1,
-    "fun2": fun2,
+	"test": fun1,
+	"fun2": fun2,
 }
 
 method["test"]("_ttt_")
 method["fun2"]()
 
 os.system('pause' if os.name == 'nt' else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+		  """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+
+
+
+

@@ -18,6 +18,8 @@ srv = "server"
 # или форматные строки f-строки
 log_message = f'>> {user} has logged in {srv}.'
 
+print(f'{user=} and {srv=}')  # user='user' and srv='server' python 3.8
+
 log_message = '>> {} has logged in {}.'.format(user, srv)
 print(log_message)
 

@@ -59,4 +59,4 @@ def func1(*args):
 print(func1('dd', 11, 22, 'aa'))
 
 os.system('pause' if os.name == 'nt' else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+		  """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
