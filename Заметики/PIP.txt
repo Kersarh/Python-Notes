@@ -6,7 +6,6 @@
 
 # Создать файл зависимостей в текущем каталоге
 >> pip freeze > requirements.txt  # создать файл с зависимостями
->> pip install -r requirements.txt --upgrade
 
 Установка зависимостей из файла 
 >> pip install -r requirements.txt
