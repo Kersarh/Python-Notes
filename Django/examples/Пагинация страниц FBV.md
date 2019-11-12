@@ -1,5 +1,8 @@
-# в файле views.py
+# Пагинация на основе FunctionBaseView (FBV)
 
+## В файле `views.py`
+
+```python
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 def home(request):
     postList = Post.objects.filter(visible='1')
@@ -13,10 +16,11 @@ def home(request):
         querysetGoods = paginator.page(paginator.num_pages)
 
     return render(request, "partial/home.html", {'posts': querysetGoods})
+```
 
+## В шаблоне
 
-В щаблоне
-
+```python
 <div class="pagination">
     {% if posts.has_previous %}
         <a href="?page={{ posts.previous_page_number }}">Older</a>
@@ -34,3 +38,4 @@ def home(request):
         <a href="?page={{ posts.next_page_number }}">Newer</a>
     {% endif %}
 </div>
+```

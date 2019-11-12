@@ -1,13 +1,18 @@
-# в файле views.py
+# Пагинация на основе ClassBaseView (CBV)
 
+## В файле `views.py`
+
+```python
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 class ListAll(ListView):
     model = Post
     paginate_by = 5
     template_name = 'list.html'
+```
 
+## В шаблоне
 
-В щаблоне
+```python
     {% if page_obj.has_previous %}
       <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
@@ -30,3 +35,4 @@ class ListAll(ListView):
         <span class="sr-only">Next</span>
       </a>
     {% endif %}
+```

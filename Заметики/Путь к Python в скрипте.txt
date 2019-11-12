@@ -1,4 +1,0 @@
-Добавить первой строкой в скрипт
-#! C:\Projects\my_venv\Scripts\python.exe
-или
-#! my_venv\Scripts\python.exe
