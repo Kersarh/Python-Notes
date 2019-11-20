@@ -1,6 +1,4 @@
 __pycache__
 /.vscode
-/.pylintrc
 desktop.ini
-.style.yapf
 favicon.ico
