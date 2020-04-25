@@ -4,9 +4,9 @@ i = 10
 
 # цикл while пока i > 0 = True
 while i > 0:
-	i -= 1  # i = i - 1
+	i -= 1    # i = i - 1
 	print("Верно!", i)
-else:  # Необязательное! Выполняется если while = Falsa
+else:    # Необязательное! Выполняется если while = Falsa
 	print("error!")
 
 # цикл for
@@ -16,7 +16,6 @@ for x in lst:
 	print("x= ", x)
 
 for a in range(5):
-	a += 1  # a = a + 1
 	print("a= ", a)
 
 os.system('pause' if os.name == 'nt' else

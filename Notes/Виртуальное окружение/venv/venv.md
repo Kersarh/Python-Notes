@@ -10,10 +10,14 @@
 ```my_venv\Scripts\activate```  
 или  
 ```my_venv\Scripts\activate.bat```  
-  
+
+для **Linux**
+
+`source env/bin/activate`
+
 Должна появится приписка в командной строке  
 `(myvenv) C:\my_project>`  
-  
+
 ## Авто использование в скрипте  
 
 Добавить первой строкой в скрипт  

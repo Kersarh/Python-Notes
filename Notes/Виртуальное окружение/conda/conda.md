@@ -20,3 +20,5 @@
 
 `conda list -e > requirements.txt`
 
+## Запуск и остановка
+

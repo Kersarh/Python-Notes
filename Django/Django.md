@@ -4,6 +4,10 @@
 
 `pip install django`
 
+Для работы с postgresql понадобится
+
+`apt build-dep python-psycopg2`
+
 ## Создать проект
 
 `django-admin startproject project_name`
@@ -40,4 +44,4 @@
 ```json
 "python.linting.pylintArgs": [
         "--load-plugins", "pylint_django"],
-        ```
+```

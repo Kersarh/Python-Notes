@@ -2,11 +2,11 @@ import os
 
 str1 = "Это строка"
 str2 = "ЭТО ВТОРАЯ СТРОКА"
-print(str1.replace('то', 'хо'))  # Замена одной подстроки другой
-print(str1.find('то'))  # Поиск смещения подстроки
-print(str1.split(' '))  # Разбивает строку по разделителю
-print(str1.upper())  # Преобразование в верхний регистр
-print(str2.lower())  # Преобразование в нижний регистр
+print(str1.replace('то', 'хо'))    # Замена одной подстроки другой
+print(str1.find('то'))    # Поиск смещения подстроки
+print(str1.split(' '))    # Разбивает строку по разделителю
+print(str1.upper())    # Преобразование в верхний регистр
+print(str2.lower())    # Преобразование в нижний регистр
 
 print("te\nst \nte\tst")
 
@@ -18,11 +18,9 @@ srv = "server"
 # или форматные строки f-строки
 log_message = f'>> {user} has logged in {srv}.'
 
-print(f'{user=} and {srv=}')  # user='user' and srv='server' python 3.8
+print(f'{user=} and {srv=}')    # user='user' and srv='server' python 3.8
 
 log_message = '>> {} has logged in {}.'.format(user, srv)
-print(log_message)
-
 print(log_message)
 
 log_message = "test {0} or {1} and {2}".format(10, 20, "str")
