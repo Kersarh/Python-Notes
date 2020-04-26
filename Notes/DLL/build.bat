@@ -1,0 +1,1 @@
+go build -o NAME.dll -buildmode=c-shared
