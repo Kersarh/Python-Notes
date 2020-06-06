@@ -4,6 +4,7 @@ import subprocess
 
 path_dir = ""
 
+
 def pr_name():
     global path_dir
 
@@ -30,12 +31,12 @@ def pr_name():
         path_dir = os.path.abspath(os.curdir)
     except FileExistsError:
         print(">>> Заданное имя уже существует!")
-        return(1)
+        return 1
     except:
-        print(">>> Скрипт завершен с ошибкой!!!""")
+        print(">>> Скрипт завершен с ошибкой!!!" "")
         print(sys.exc_info())
-        return(9)
-    return(0)
+        return 9
+    return 0
 
 
 def create_runfile():

@@ -1,13 +1,13 @@
 import os
 
 # Открываем в режиме записи
-f = open('myfile.txt', 'w')
+f = open("myfile.txt", "w")
 # Записываем
 f.write("Привет!\n2 строка")
 f.close()  # Закрываем файл
 
 # Открываем в режиме чтения
-f = open('myfile.txt', 'r')
+f = open("myfile.txt", "r")
 # Считываем
 text = f.read()
 # Закрываем файл
@@ -15,11 +15,14 @@ f.close()
 print(text)  # Выводим результат
 
 # Менеджер контекста в любом случае закроет файл по окончании
-with open("myfile.txt", 'w') as wf:
-	wf.write("Привет!")
+with open("myfile.txt", "w") as wf:
+    wf.write("Привет!")
 
-os.system('pause' if os.name == 'nt' else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system(
+    "pause"
+    if os.name == "nt"
+    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
+)
 
 #
 # r 	Открывает файл только для чтения. Указатель стоит в начале файла.

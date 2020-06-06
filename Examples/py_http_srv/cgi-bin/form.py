@@ -16,7 +16,8 @@ text2 = form.getfirst("TEXT_2", "не задано")
 # text2 = html.escape(text2)
 
 print("Content-type: text/html\n")
-print("""
+print(
+    """
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,10 +25,13 @@ print("""
 	<title>Обработка данных форм</title>
 </head>
 
-<body>""")
+<body>"""
+)
 
 print("<h1>Обработка данных форм!</h1>")
 print("<p>TEXT_1: {}</p>".format(text1))
 print("<p>TEXT_2: {}</p>".format(text2))
-print("""</body>
-        </html>""")
+print(
+    """</body>
+        </html>"""
+)

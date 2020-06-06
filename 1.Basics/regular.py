@@ -4,7 +4,7 @@ import os
 import re
 
 # [a-z]+ = регулярное выражение
-p = re.compile('[a-z]+')
+p = re.compile("[a-z]+")
 
 # match() 	Определить, начинается ли совпадение регулярного выражения с начала строки
 # search() 	Сканировать всю строку в поисках всех мест совпадений с регулярным выражением
@@ -23,54 +23,54 @@ print(m)
 # span() 	Вернуть кортеж (start, end) позиций совпадения
 
 if m != None:  # если в m что-то есть то вывести на экран
-	print(m.group())
-	print(m.start(), m.end())
-	print(m.span())
+    print(m.group())
+    print(m.start(), m.end())
+    print(m.span())
 else:
-	print("no_data")
+    print("no_data")
 
 print("-- SEARCH --")
 
-m = p.search('1111test34343testsdf')
+m = p.search("1111test34343testsdf")
 print(m)
 print(m.group())
 print(m.span())
 
 print("-- FINDALL --")
-m = p.findall('1111test222user333')
+m = p.findall("1111test222user333")
 print(m)
 
 print("-- FINDITER --")
-iterator = p.finditer('1111test222user333')
+iterator = p.finditer("1111test222user333")
 print(iterator)
 for i in iterator:
-	print(i.span())
+    print(i.span())
 
 # Функции на уровне модуля + Флаги компиляции
-#DOTALL, S
+# DOTALL, S
 # Сопоставление, такое же как '.', то есть с любым символом,
 # но при включении этого флага, в рассмотрение добавляется и символ новой строки.
 
-#IGNORECASE, I
+# IGNORECASE, I
 # Сопоставление без учета регистра; Например, [A-Z] будет также соответствовать и строчным буквам,
 # так что Spam будет соответствовать Spam, spam, spAM и так далее.
 
-#LOCALE, L
+# LOCALE, L
 # Делает \w, \W, \b, \B зависящими от локализации.
 # Например, если вы работаете с текстом на французском, и хотите написать
-#\w+ для того, чтобы находить слова, но \w ищет только символы из множества [A-Za-z]
+# \w+ для того, чтобы находить слова, но \w ищет только символы из множества [A-Za-z]
 # и не будет искать 'é' или 'ç'. Если система настроена правильно и выбран французский язык, 'é' также будет рассматриваться как буква.
 
-#MULTILINE, M
+# MULTILINE, M
 # Обычно ^ ищет соответствие только в начале строки,
 # а $ только в конце непосредственно перед символом новой строки (если таковые имеются).
 # Если этот флаг указан, ^ сравнение происходит во всех строках, то есть и в начале,
 # и сразу же после каждого символа новой строки. Аналогично для $.
 
-#UNICODE, U
+# UNICODE, U
 # Делает \w, \W, \b, \B, \d, \D, \s, \S соответствующими таблице Unicode.
 
-#VERBOSE, X
+# VERBOSE, X
 # Включает многословные (подробные) регулярные выражения,
 # которые могут быть организованы более ясно и понятно.
 # Если указан этот флаг, пробелы в строке регулярного выражения игнорируется,
@@ -81,5 +81,8 @@ for i in iterator:
 
 print(re.findall(r"From\w+", "Fromage amk fROMsdf sdfsd", re.IGNORECASE))
 
-os.system('pause' if os.name == 'nt' else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system(
+    "pause"
+    if os.name == "nt"
+    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
+)

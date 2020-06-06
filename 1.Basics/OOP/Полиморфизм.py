@@ -5,15 +5,15 @@ import os
 
 
 class A:
-	def oper(self, x, y):
-		num = x + y
-		return num
+    def oper(self, x, y):
+        num = x + y
+        return num
 
 
 class B(A):  # Наследуем класс "А"
-	def oper(self, x, y):  # <-----
-		num = x / y
-		return num
+    def oper(self, x, y):  # <-----
+        num = x / y
+        return num
 
 
 obj1 = A()

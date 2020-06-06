@@ -1,7 +1,7 @@
 #! python
 import compileall
 
-modDir = "lib" # папка с модулем
+modDir = "lib"  # папка с модулем
 compileall.compile_dir(modDir)
 
 # # Для одного файла

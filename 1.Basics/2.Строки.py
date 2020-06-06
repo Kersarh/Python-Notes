@@ -1,41 +1,79 @@
+# Строки в Python - это последовательности символов в Unicode,
+# при объявлении заключается в кавычки,
+# как одинарные ‘ ‘ ,так и двойные “ “.
+# Пример инициализации строки: str="text"
+
 import os
 
 str1 = "Это строка"
 str2 = "ЭТО ВТОРАЯ СТРОКА"
-print(str1.replace('то', 'хо'))    # Замена одной подстроки другой
-print(str1.find('то'))    # Поиск смещения подстроки
-print(str1.split(' '))    # Разбивает строку по разделителю
-print(str1.upper())    # Преобразование в верхний регистр
-print(str2.lower())    # Преобразование в нижний регистр
 
-print("te\nst \nte\tst")
+# Cложение строк:
+strSum = str1 + " " + str2
+print(strSum)
+
+# Замена одной подстроки на другую:
+print(str1.replace("то", "хо"))
+
+# Поиск определенной последовательности в строке
+print(str1.find("то"))  # 4
+# На экран будет выведено число 4,
+# которое указывает на начальный индекс последовательности "ст" в строке.
+# Отсчет ведется с 0, учитывая все символы, в том числе и пробелы.
+# Э т о   с т р о к а
+# 0 1 2 3 4 5 6 7 8 9
+
+# Разбить строку по разделителю, например по пробелу ' ':
+print(str1.split(" "))
+# Вернет список из 2-х элементов ['Это', 'строка']
+
+# Изменить регистр строк:
+print(str1.upper())  # Преобразование в верхний регистр
+print(str2.lower())  # Преобразование в нижний регистр
+
+
+# Сравнение строк:
+print(str1 == str2)
+# Вернет False, так как строки не равны.
+
+print("ст\nрока номер \tодин")
 
 # FORMAT
 user = "user"
 srv = "server"
 
-# F-строки
-# или форматные строки f-строки
-log_message = f'>> {user} has logged in {srv}.'
-
-print(f'{user=} and {srv=}')    # user='user' and srv='server' python 3.8
-
-log_message = '>> {} has logged in {}.'.format(user, srv)
+# Позиционная вставка:
+# Позиция, в которую будут вставляться наши данные, задается фигурными скобками {}.
+# А сами данные передаются значениями функции format.
+log_message = ">> {} has logged in {}.".format(user, srv)
 print(log_message)
 
 log_message = "test {0} or {1} and {2}".format(10, 20, "str")
 print(log_message)
 
+# Передача значений списком
 arr_format = [20, 30, "str"]
 print("{0} - {1} - {2}".format(*arr_format))
 
+# Вставка по значению:
+# В данном случае последовательность, в которой мы передаем данные, не имеет значения.
 print("{color} - {model}".format(model="BMW", color="red"))
 
+# Передача значений словарем
 d = {"color": "red", "model": "BMW"}
 print("{color} - {model}".format(**d))
 
-os.system('pause' if os.name == 'nt' else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+# F-строки или форматные строки
+# были введены в python 3.8
+log_message = f">> {user} has logged in {srv}."
+
+print(f"{user=} and {srv=}")  # user='user' and srv='server'
+
+os.system(
+    "pause"
+    if os.name == "nt"
+    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
+)
 
 # \n — перевод строки
 # \r — возврат каретки

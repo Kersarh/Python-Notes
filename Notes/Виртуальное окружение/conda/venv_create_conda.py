@@ -25,10 +25,8 @@ def venv_create(conda_script, conda_dir):
         print(">>> Использовано значение по умолчанию!", py_ver)
 
     cmd = "cmd /K {conda_script} {conda_dir} && conda create -p {env_name}\\venv_{env_name} --copy --yes python={py_ver} conda".format(
-        conda_script=conda_script,
-        conda_dir=conda_dir,
-        env_name=env_name,
-        py_ver=py_ver)
+        conda_script=conda_script, conda_dir=conda_dir, env_name=env_name, py_ver=py_ver
+    )
     subprocess.Popen(cmd, shell=False)
 
 

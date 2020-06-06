@@ -3,8 +3,9 @@
 # Получение значание между тегами
 import os
 import re
+
 # Читаем файл в text
-f_r = open('reg_read.txt', 'r')
+f_r = open("reg_read.txt", "r")
 text = f_r.read()
 f_r.close()
 
@@ -16,8 +17,11 @@ print("m = {}".format(m))
 # сохраняем результат в файл
 f_w = open("reg_write.txt", "w")
 for i in m:
-	f_w.write(i + "\n")
+    f_w.write(i + "\n")
 f_w.close()
 
-os.system('pause' if os.name == 'nt' else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system(
+    "pause"
+    if os.name == "nt"
+    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
+)

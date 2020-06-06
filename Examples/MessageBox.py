@@ -27,13 +27,14 @@ messagebox.askquestion(title, message)
 messagebox.askokcancel(title, message)
 # Отображает окно с запросом, OK, ОТМЕНА
 
-#-----------------------------------------------------
+# -----------------------------------------------------
 # вывод через api windows
 import ctypes
+
 # Initialization
 MBox = ctypes.windll.user32.MessageBoxW
 # Show Message
-MBox(None, 'Hello', 'Window title', 0)
+MBox(None, "Hello", "Window title", 0)
 
 ##  Styles:
 ##  0 : OK

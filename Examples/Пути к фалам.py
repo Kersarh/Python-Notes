@@ -3,7 +3,7 @@
 from pathlib import Path
 from pathlib import PurePath
 
-root = Path('C:\\')
+root = Path("C:\\")
 print("root = ", root)
 
 # Домашний каталог текущего пользователя
@@ -15,23 +15,23 @@ w = PurePath("/home/user/temp/").parts
 print(w)
 
 # Чтение и запись строк
-p = Path('test.txt')
+p = Path("test.txt")
 # Записать строку в файл и закрыть файл
-p.write_text('Hello world\n 2 строка\n')
+p.write_text("Hello world\n 2 строка\n")
 # Прочитать строку из файла
 line = p.read_text()
 print(line)
 # запись и чтение с атрибутами доступа
-p.open('a+').write('some text')
-ln = p.open('a+').read()
+p.open("a+").write("some text")
+ln = p.open("a+").read()
 print(ln)
 
 # запись в файл
-Path('test.conf').write_text('# config goes here')
+Path("test.conf").write_text("# config goes here")
 # или
-path = Path('test2.conf')
-with path.open(mode='wt') as config:
-	config.write('# config goes here')
+path = Path("test2.conf")
+with path.open(mode="wt") as config:
+    config.write("# config goes here")
 
 # r 	Открывает файл только для чтения. Указатель стоит в начале файла.
 # rb 	Открывает файл для чтения в двоичном формате. Указатель стоит в начале файла.
