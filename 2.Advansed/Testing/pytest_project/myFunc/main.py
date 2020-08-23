@@ -12,4 +12,3 @@ def summ(a, b):
 
 if __name__ == "__main__":
     main()
-

@@ -15,7 +15,6 @@ class QtApp(QMainWindow):
         super(QtApp, self).__init__()
         self.ui = Ui_QtApp()
         self.ui.setupUi(self)
-        
 
 
 if __name__ == "__main__":

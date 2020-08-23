@@ -4,4 +4,3 @@ def get_message():
 
 def print_message():
     print(get_message())
-

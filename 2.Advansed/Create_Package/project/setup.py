@@ -13,4 +13,3 @@ setup(
         "console_scripts": ["mypckg = module1.main:print_message"]
     },
 )
-

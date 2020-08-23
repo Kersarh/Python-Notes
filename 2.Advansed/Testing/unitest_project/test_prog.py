@@ -43,4 +43,3 @@ if __name__ == "__main__":
 
 # @unittest.skipUnless(condition, reason)
 # Тест будет пропущен если, условие (condition) не истинно.
-
