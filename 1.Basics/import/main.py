@@ -1,4 +1,6 @@
 import os
+import sys
+import sys
 
 # import random #импорт всего мудуля random. Вызов random.randint(1, 100)
 # from random import randint # Вызов randint(1, 100)
@@ -29,5 +31,15 @@ mod1.func.fun()
 # импорт в переменную
 obj = __import__("fun2")
 obj.fun()
+
+# Импорт из ZIP архива
+sys.path.insert(0, 'MyZipMod.zip')
+import mymod1
+
+mymod1.func1()
+
+print(">> Директории для поиска модулей <<")
+print(*sys.path, sep='\n')
+
 
 os.system("pause")
