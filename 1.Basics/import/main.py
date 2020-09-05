@@ -37,6 +37,7 @@ sys.path.insert(0, 'MyZipMod.zip')
 import mymod1
 
 mymod1.func1()
+print(mymod1.__file__)
 
 print(">> Директории для поиска модулей <<")
 print(*sys.path, sep='\n')
