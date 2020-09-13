@@ -36,7 +36,6 @@ class MyTest(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
-
 # Для условного пропуска тестов применяются следующие декораторы:
 # @unittest.skipIf(condition, reason)
 # Тест будет пропущен, если условие (condition) истинно.

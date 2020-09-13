@@ -6,8 +6,7 @@ import codecs
 from http.server import HTTPServer, CGIHTTPRequestHandler
 
 print("Content-type: text/html")
-print(
-    """
+print("""
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,7 +14,6 @@ print(
 	<title>Обработка данных форм</title>
 </head>
 
-<body>"""
-)
+<body>""")
 print()
 print("<h1>Hello world!</h1>")

@@ -45,9 +45,8 @@ for add_file in attach_file:
         email.encoders.encode_base64(attachment)
         file.close()
         only_name_attach = Header(os.path.basename(add_file), mail_coding)
-        attachment.add_header(
-            "Content-Disposition", 'attachment; filename="%s"' % only_name_attach
-        )
+        attachment.add_header("Content-Disposition",
+                              'attachment; filename="%s"' % only_name_attach)
         multi_msg.attach(attachment)
     else:
         if add_file.lstrip() != "":
@@ -62,8 +61,5 @@ smtp.login(smtp_user, smtp_pwd)
 smtp.sendmail(mail_from, mail_to, multi_msg.as_string())
 smtp.quit()
 
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)
+os.system("pause" if os.name == "nt" else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

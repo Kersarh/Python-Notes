@@ -33,8 +33,5 @@ if p == h2.hexdigest():  # сравнение с хешем в базе
 else:
     print("Wrong password!")
 
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)
+os.system("pause" if os.name == "nt" else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

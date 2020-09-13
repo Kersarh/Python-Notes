@@ -13,7 +13,8 @@ import datetime
 dt = datetime.datetime.now()  # получаем дату и время!
 now_date = dt.date().strftime("%Y-%m-%d")  # Текущая дата
 now_time = dt.time().strftime("%H-%M-%S")  # Текущее время
-backup_folders = ["D:\\test1", "D:\\test2", "D:\\test3"]  # Список папок для архивации
+backup_folders = ["D:\\test1", "D:\\test2",
+                  "D:\\test3"]  # Список папок для архивации
 arch_name = "backup_" + str(now_date) + ".zip"  # имя архива!
 ignore_file = ["123.txt"]  # если надо исключить файлы
 
@@ -51,8 +52,5 @@ print(now_time, now_date)
 # функция создаст архив при наличии перезапишет существующий
 mybackup(arch_name, backup_folders, "w")
 
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)
+os.system("pause" if os.name == "nt" else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

@@ -76,22 +76,20 @@ class Ui_QtApp(object):
     # setupUi
 
     def retranslateUi(self, QtApp):
-        QtApp.setWindowTitle(QCoreApplication.translate("QtApp", u"QtApp", None))
+        QtApp.setWindowTitle(
+            QCoreApplication.translate("QtApp", u"QtApp", None))
         self.action.setText(
             QCoreApplication.translate(
-                "QtApp", u"\u041e\u0442\u043a\u0440\u044b\u0442\u044c", None
-            )
-        )
+                "QtApp", u"\u041e\u0442\u043a\u0440\u044b\u0442\u044c", None))
         self.action_3.setText(
             QCoreApplication.translate(
-                "QtApp", u"\u0417\u0430\u043a\u0440\u044b\u0442\u044c", None
-            )
-        )
+                "QtApp", u"\u0417\u0430\u043a\u0440\u044b\u0442\u044c", None))
         self.menu.setTitle(
-            QCoreApplication.translate("QtApp", u"\u0424\u0430\u0439\u043b", None)
-        )
+            QCoreApplication.translate("QtApp", u"\u0424\u0430\u0439\u043b",
+                                       None))
         self.menu_2.setTitle(
-            QCoreApplication.translate("QtApp", u"\u0412\u044b\u0445\u043e\u0434", None)
-        )
+            QCoreApplication.translate("QtApp",
+                                       u"\u0412\u044b\u0445\u043e\u0434",
+                                       None))
 
     # retranslateUi

@@ -97,17 +97,16 @@ class Search(ListView):
         queryset = super(Search, self).get_queryset()
         q = self.request.GET.get("q")
         if q:
-            vector = SearchVector("title", "content", raw=True, fields=("title"))
+            vector = SearchVector("title",
+                                  "content",
+                                  raw=True,
+                                  fields=("title"))
             vector_trgm = TrigramSimilarity(
-                "title", q, raw=True, fields=("title")
-            ) + TrigramSimilarity("content", q, raw=True, fields=("content"))
+                "title", q, raw=True, fields=("title")) + TrigramSimilarity(
+                    "content", q, raw=True, fields=("content"))
             a = queryset.annotate(search=vector).order_by("title").filter(
-                search=q
-            ) or queryset.annotate(similarity=vector_trgm).filter(
-                similarity__gt=0.1
-            ).order_by(
-                "title"
-            )
+                search=q) or queryset.annotate(similarity=vector_trgm).filter(
+                    similarity__gt=0.1).order_by("title")
             if not a:  # Если НЕ найдено
                 self.template_name = "blog/partial/not_found.html"
                 return ["Not Found!"]

@@ -21,8 +21,5 @@ pat = re.compile(
 test = pat.search(ip6)
 print("Все IPv6 >>", test.group())
 
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)
+os.system("pause" if os.name == "nt" else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")

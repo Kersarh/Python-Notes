@@ -4,7 +4,6 @@ import os
 syslib = ctypes.cdll.msvcrt
 syslib.printf(b"system DLL!\n")
 
-
 lib = ctypes.cdll.LoadLibrary("./NAME.dll")
 lib.PrintData()
 

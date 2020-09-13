@@ -32,28 +32,30 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
 
         self.setMinimumSize(QSize(480, 80))  # Устанавливаем размеры
-        self.setWindowTitle("System Tray Application")  # Устанавливаем заголовок окна
+        self.setWindowTitle(
+            "System Tray Application")  # Устанавливаем заголовок окна
         central_widget = QWidget(self)  # Создаём центральный виджет
-        self.setCentralWidget(central_widget)  # Устанавливаем центральный виджет
+        self.setCentralWidget(
+            central_widget)  # Устанавливаем центральный виджет
 
         grid_layout = QGridLayout(self)  # Создаём QGridLayout
         central_widget.setLayout(
             grid_layout
         )  # Устанавливаем данное размещение в центральный виджет
         grid_layout.addWidget(
-            QLabel("Application, which can minimize to Tray", self), 0, 0
-        )
+            QLabel("Application, which can minimize to Tray", self), 0, 0)
 
         # Добавляем чекбокс, от которого будет зависеть поведение программы при закрытии окна
         self.check_box = QCheckBox("Minimize to Tray")
         grid_layout.addWidget(self.check_box, 1, 0)
         grid_layout.addItem(
-            QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Expanding), 2, 0
-        )
+            QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Expanding), 2,
+            0)
 
         # Инициализируем QSystemTrayIcon
         self.tray_icon = QSystemTrayIcon(self)
-        self.tray_icon.setIcon(self.style().standardIcon(QStyle.SP_ComputerIcon))
+        self.tray_icon.setIcon(self.style().standardIcon(
+            QStyle.SP_ComputerIcon))
         """
             Объявим и добавим действия для работы с иконкой системного трея
             show - показать окно

@@ -59,8 +59,5 @@ def translit(txt):
 
 translit("Привет Мир! PriVet MiR!")
 
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)
+os.system("pause" if os.name == "nt" else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
