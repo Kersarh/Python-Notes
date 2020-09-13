@@ -1,5 +1,8 @@
+'''
+Импортирование модулей
+'''
+
 import os
-import sys
 import sys
 
 # import random #импорт всего мудуля random. Вызов random.randint(1, 100)
@@ -41,6 +44,3 @@ print(mymod1.__file__)
 
 print(">> Директории для поиска модулей <<")
 print(*sys.path, sep='\n')
-
-
-os.system("pause")
