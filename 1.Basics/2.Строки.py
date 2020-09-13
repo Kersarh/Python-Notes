@@ -1,14 +1,14 @@
-# Строки в Python - это последовательности символов в Unicode,
-# при объявлении заключается в кавычки,
-# как одинарные ‘ ‘ ,так и двойные “ “.
-# Пример инициализации строки: str="text"
-
-import os
+'''
+Строки в Python - это последовательности символов в Unicode,
+при объявлении заключается в кавычки,
+как одинарные ‘ ‘ ,так и двойные “ “.
+Пример инициализации строки: str="text"
+'''
 
 str1 = "Это строка"
 str2 = "ЭТО ВТОРАЯ СТРОКА"
 
-# Cложение строк:
+# Cложение строк (конкатенация):
 strSum = str1 + " " + str2
 print(strSum)
 
@@ -30,7 +30,6 @@ print(str1.split(" "))
 # Изменить регистр строк:
 print(str1.upper())  # Преобразование в верхний регистр
 print(str2.lower())  # Преобразование в нижний регистр
-
 
 # Сравнение строк:
 print(str1 == str2)
@@ -68,12 +67,6 @@ print("{color} - {model}".format(**d))
 log_message = f">> {user} has logged in {srv}."
 
 print(f"{user=} and {srv=}")  # user='user' and srv='server'
-
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)
 
 # \n — перевод строки
 # \r — возврат каретки

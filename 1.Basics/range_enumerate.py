@@ -1,7 +1,3 @@
-# coding: utf8
-
-import os
-
 arr = [1, 2, 3]
 
 for i in range(len(arr)):
@@ -27,9 +23,3 @@ for i, elem in enumerate(arr2):
     if elem % 2 == 0:
         arr2[i] *= 2
 print(arr2)
-
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)

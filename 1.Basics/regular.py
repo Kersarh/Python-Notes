@@ -1,6 +1,3 @@
-# -*- coding: UTF-8 -*-
-
-import os
 import re
 
 # [a-z]+ = регулярное выражение
@@ -80,9 +77,3 @@ for i in iterator:
 # которые будут игнорироваться движком.
 
 print(re.findall(r"From\w+", "Fromage amk fROMsdf sdfsd", re.IGNORECASE))
-
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)

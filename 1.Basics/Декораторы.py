@@ -1,6 +1,3 @@
-import os
-
-
 def fun_decor(fn):
     def decor():
         print("До выполнения")
@@ -24,9 +21,3 @@ def test1():
 
 
 test1()
-
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)
