@@ -1,4 +1,7 @@
-import os
+'''
+Использование модуля datetime
+'''
+
 import datetime
 
 # timedelta — дата в виде количества дней, секунд и микросекунд.
@@ -28,5 +31,3 @@ print(d)
 d = datetime.date.today()
 print(d)
 print(d.strftime("%d.%m.%Y"))
-
-os.system("pause")

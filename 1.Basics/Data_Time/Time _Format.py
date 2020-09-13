@@ -1,4 +1,7 @@
-import os
+'''
+Форматированный вывод времени
+'''
+
 import time
 import locale
 
@@ -23,7 +26,7 @@ import locale
 # %p — эквивалент значениям AM и PM в текущей локали;
 # %c — представление даты и времени в текущей локали;
 # %x — представление даты в текущей локали;
-# %X — представление времени в текущей локали. Пример:
+# %X — представление времени в текущей локали.
 
 print("--- strftime() ---")
 # strftime(<Строка формата>[, <Объект struct_time>]) —
@@ -57,5 +60,3 @@ print(time.ctime())
 locale.setlocale(locale.LC_ALL, "Russian_Russia.1251")
 s = "Сегодня:\n%A %d %b %Y %H:%M:%S\n%d.%m.%Y"
 print(time.strftime(s))
-
-os.system("pause")
