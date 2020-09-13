@@ -13,16 +13,19 @@ text = f.read()
 # Закрываем файл
 f.close()
 print(text)  # Выводим результат
+# -----------------------------------------------
 
 # Менеджер контекста в любом случае закроет файл по окончании
-with open("myfile.txt", "w") as wf:
-    wf.write("Привет!")
+# mode - r: чтение、w: запись、a: дополнительная запись
+with open("myfile.txt", mode="w") as wf:
+    wf.write("Привет!")  # Запись в файл
 
-os.system(
-    "pause"
-    if os.name == "nt"
-    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
-)
+# Чтение файла
+with open("myfile.txt", "r") as r:
+    print(r.read())
+
+os.system("pause" if os.name == "nt" else
+          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
 
 #
 # r 	Открывает файл только для чтения. Указатель стоит в начале файла.
