@@ -1,5 +1,6 @@
 '''
-Классы данных (Data classes) - Одна из возможностей появившихся в Python 3.7. Они призваны автоматизировать генерацию кода классов, которые используются для хранения данных.
+Классы данных (Data classes) - Одна из возможностей появившихся в Python 3.7.
+Они призваны автоматизировать генерацию кода классов, которые используются для хранения данных.
 '''
 
 from dataclasses import dataclass
@@ -22,7 +23,7 @@ print("---------------------")
 
 #  с применением dataclass:
 @dataclass
-class name2:
+class Name2:
     name: str
     age: int = 10
 
@@ -30,7 +31,7 @@ class name2:
         print(self.name, self.age)
 
 
-name = name2("user", 20)  # user 20
-name.prnt_data()  # name2(name='user', age=20)
+name = Name2("user", 20)  # user 20
+name.prnt_data()  # Name2(name='user', age=20)
 print(name)
 print("---------------------")

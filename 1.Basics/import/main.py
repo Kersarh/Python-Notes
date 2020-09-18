@@ -5,7 +5,7 @@
 import os
 import sys
 
-# import random #импорт всего мудуля random. Вызов random.randint(1, 100)
+# import random #импорт всего модуля random. Вызов random.randint(1, 100)
 # from random import randint # Вызов randint(1, 100)
 # или импорт *(всех) функций из модуля. Вызов randint(1, 100)
 from random import *
