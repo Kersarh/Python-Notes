@@ -7,14 +7,12 @@ for i, elem in enumerate(arr2):
     print("i=", i, "elem=", elem)
 
 print(enumerate(arr2))  # <enumerate object at 0x000001D9B298C600>
-
-# range
 '''
 range(arg) может быть очень полезной, если вам нужно выполнить действие определенное количество раз.
 '''
 arr = [1, 2, 3]
 
-# по длинне arr
+# по длине arr
 for i in range(len(arr)):
     print(i)
 print("---------------")
