@@ -18,7 +18,7 @@ def createConfig(path):
 
 def testConfig(path):
 
-    # если файла нет то создаем с стандартными настройками
+    # если файла нет то создаем со стандартными настройками
     if not os.path.exists(path):
         createConfig(path)
 
