@@ -1,6 +1,7 @@
+'''
+Логирование
+'''
 import logging
-import os
-import sys
 
 # Создаём logger
 logger = logging.getLogger("example")
@@ -14,7 +15,7 @@ handl.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     "%(asctime)s -- %(name)s -- %(levelname)s -- %(message)s")
 
-# Добавляем формат в кон
+# Добавляем формат
 handl.setFormatter(formatter)
 
 # добавляем handl в наш logger
@@ -30,6 +31,3 @@ logger.warning("Warning message")
 logger.error("Error message")
 # Сообщение критическое
 logger.critical("Critical message")
-
-os.system("pause" if os.name == "nt" else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
