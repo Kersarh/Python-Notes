@@ -4,8 +4,9 @@ setup.py - параметры для сборки пакетов
 
 #from setuptools import setup
 from distutils.core import setup  # для whl
+from os.path import dirname, join
+
 from setuptools import find_packages
-from os.path import join, dirname
 
 setup(
     name="MyPackage",
@@ -19,7 +20,7 @@ setup(
     entry_points={
         "console_scripts": ["mypckg = module1.main:print_message"]
         # Теперь можно вызвать mypckg в консоли.
-        # Будет выволнен module1.main:print_message
+        # Будет выполнен module1.main:print_message
     },
     test_suite='tests',  # Подключаем тесты 'python setup.py test'
 )
