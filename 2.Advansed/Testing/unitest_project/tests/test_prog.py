@@ -15,21 +15,21 @@ class MyTest(unittest.TestCase):
         print("\n==========")
         print(">>> Конец тестирования <<<")
 
-    def setUp(self):
-        """ Для каждого теста """
-        print("\t <<<")
+    # def setUp(self):
+    #     """ Для каждого теста """
+    #     print(" !!! ")
 
     def test_main(self):
-        print("id: " + self.id())
+        # print("id: " + self.id()) # Отобразить id
         self.assertEqual(prog.main(), "ok")
 
-    @unittest.skip("Пропуск теста")
+    @unittest.skip("SKIP")
     def test_func1(self):
-        print("id: " + self.id())
+        # print("id: " + self.id())
         self.assertEqual(prog.func1(), "false")
 
     def test_summ(self):
-        print("id: " + self.id())
+        # print("id: " + self.id())
         self.assertEqual(prog.summ(2, 3), 5)
 
 
