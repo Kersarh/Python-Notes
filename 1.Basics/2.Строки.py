@@ -68,6 +68,13 @@ log_message = f">> {user} has logged in {srv}."
 
 print(f"{user=} and {srv=}")  # user='user' and srv='server'
 
+# Python3.9
+# Удаление суффиксов и префиксов
+a = "MyText".removeprefix("My")
+print(a)
+a = "MyText".removesuffix("Text")
+print(a)
+
 # \n — перевод строки
 # \r — возврат каретки
 # \t — знак табуляции
