@@ -42,3 +42,13 @@ for i, x in enumerate(lst):
 # Для указания определенного числа итераций можно использовать функцию range().
 for a in range(3):
     print("a= ", a)
+
+# ELSE блок в цикле for
+# отработает после цикла если не было использовано break
+# или вылет ошибки.
+
+for i in range(2):
+    print(i)
+    # break
+else:
+    print("not data")
