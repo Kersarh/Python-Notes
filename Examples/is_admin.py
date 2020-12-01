@@ -13,8 +13,9 @@ def is_admin():
 
 
 if is_admin():
-    pass  # Если админ продолжаем скрипт дальше
-    print("admin!!!")
+    # Если админ продолжаем скрипт дальше
+    input(" As Admin!!!\n Press Enter!")
+
 else:
     # Перезапускаем скрипт с правами админа
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable,
