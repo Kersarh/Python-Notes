@@ -28,11 +28,23 @@ def local_ip():
 		return "Err (192.168.244.1)"
 	return local_ip
 
+# list_local_ip = [i for i in socket.getaddrinfo(socket.gethostname(), None)] # Можно получить через генератор списков
+
+def my_list_ip():
+	# Получаем ВСЕ локальные IP
+    l = []
+    ret = ""
+    for i in socket.getaddrinfo(socket.gethostname(), None):
+        l.append(i[4][0])
+    for a in l:
+    	ret += a +"\n"
+    return ret
+
 
 if __name__ == "__main__":
 	# hide main window
 	root = tkinter.Tk()
 	root.withdraw()
-	msg = "WEB - {}\nLOCAL - {}".format(net_ip(), local_ip())
+	msg = "WEB - \n{}\nLOCAL - \n{}".format(net_ip(), my_list_ip())
 	while messagebox.askretrycancel("IP", msg):
 		pass
