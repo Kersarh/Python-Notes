@@ -8,14 +8,14 @@ import time
 
 
 def bold(fn):  # функция декоратор
-    def wrapper():  # Функция обертка
+    def wrapper(*args, **kwargs):  # Функция обертка
         return "<b>" + fn() + "</b>"
 
     return wrapper  # Возвращаем функцию обертку
 
 
 def benchmark(fn):
-    def wrapper():
+    def wrapper(*args, **kwargs):
         start = time.time()
         fn()
         end = time.time()
