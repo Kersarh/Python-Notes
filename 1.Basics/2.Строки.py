@@ -71,9 +71,9 @@ print(f"{user=} and {srv=}")  # user='user' and srv='server'
 # Python3.9
 # Удаление суффиксов и префиксов
 a = "MyText".removeprefix("My")
-print(a)
+print("rm pref", a)
 a = "MyText".removesuffix("Text")
-print(a)
+print("rm suf", a)
 
 # \n — перевод строки
 # \r — возврат каретки

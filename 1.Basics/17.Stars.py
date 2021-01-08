@@ -62,7 +62,7 @@ pos_arg("data1", 'data2', dictionary=list1, default=False)  # Вызов по и
 
 # Одиночная звездочка указывает что функция принимает именованные аргументы!
 # Данная функция принимает позиционный аргумент mydata
-# И именованый аргумент
+# И именованный аргумент
 def pos_arg2(mydata, *, dictionary):
     print("mydata= ", mydata)
     print("dictionary= ", dictionary)
