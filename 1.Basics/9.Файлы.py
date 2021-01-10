@@ -25,8 +25,11 @@ print(text)  # Выводим результат
 
 # Оператор with создает Менеджер контекста,
 # который автоматически закрывает файл по окончанию работы.
-with open("myfile.txt", mode="w") as wf:
-    wf.write("Привет!")  # Запись в файл
+with open("myfile.txt", mode="w") as f:
+    f.write("Привет!")  # Запись в файл
+    f.seek(2) # Перейти к 3-му байту в файле
+    f.write("Мир!")
+
 
 # Чтение файла
 with open("myfile.txt", "r") as r:
