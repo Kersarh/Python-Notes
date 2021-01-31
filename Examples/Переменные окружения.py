@@ -1,12 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-import os
-
-a = os.getenv("APPDATA")
-print(a)
-w = os.getenv("WINDIR")
-print(w)
-
 # Все переменые окружения
 # print(os.environ)
 
