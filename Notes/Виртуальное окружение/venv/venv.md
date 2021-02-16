@@ -16,7 +16,7 @@
 `source env/bin/activate`
 
 Должна появится приписка в командной строке  
-`(myvenv) C:\my_project>`  
+`(my_venv) C:\my_project>`  
 
 ## Авто использование в скрипте  
 
