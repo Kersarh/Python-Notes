@@ -21,5 +21,10 @@ pat = re.compile(
 test = pat.search(ip6)
 print("Все IPv6 >>", test.group())
 
+
+# Телефонные номера
+pattern = r"(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})"
+
+
 os.system("pause" if os.name == "nt" else
           """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
