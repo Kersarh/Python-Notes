@@ -48,8 +48,14 @@ parser.add_argument("-d", "--digit", default="1", type=int, help="Число")
 # Возможные варианты команд
 namespace = parser.parse_args(sys.argv[1:])
 print(namespace)
-print("Привет, {}! Число = {}, {}".format(namespace.name, namespace.digit,
-                                          namespace.test_command))
+print(
+    "Привет, {}! Число = {}, {}".format(
+        namespace.name, namespace.digit, namespace.test_command
+    )
+)
 
-os.system("pause" if os.name == "nt" else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system(
+    "pause"
+    if os.name == "nt"
+    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
+)

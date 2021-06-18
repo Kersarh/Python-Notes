@@ -41,8 +41,9 @@ for add_file in attach_file:
         email.encoders.encode_base64(attachment)
         file.close()
         only_name_attach = Header(os.path.basename(add_file), mail_coding)
-        attachment.add_header("Content-Disposition",
-                              'attachment; filename="%s"' % only_name_attach)
+        attachment.add_header(
+            "Content-Disposition", 'attachment; filename="%s"' % only_name_attach
+        )
         multi_msg.attach(attachment)
     else:
         if add_file.lstrip() != "":
@@ -58,10 +59,10 @@ smtp.sendmail(mail_from, mail_to, multi_msg.as_string())
 smtp.quit()
 
 
-'''
+"""
 Разрешить авторизацию
 Google 
 https://www.google.com/settings/security/lesssecureapps
 Яндекс
 https://mail.yandex.ru/?dpda=yes#setup/client
-'''
+"""

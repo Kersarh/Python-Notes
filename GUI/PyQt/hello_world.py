@@ -19,18 +19,17 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central_widget)  # Устанавливаем
 
         grid_layout = QGridLayout(self)  # Создаём QGridLayout
-        central_widget.setLayout(
-            grid_layout)  # Устанавливаем в центральный виджет
+        central_widget.setLayout(grid_layout)  # Устанавливаем в центральный виджет
 
         title = QLabel("text for QLabel", self)  # Создаём лейбл
         title.setAlignment(
-            QtCore.Qt.AlignCenter)  # Устанавливаем позиционирование текста
+            QtCore.Qt.AlignCenter
+        )  # Устанавливаем позиционирование текста
         grid_layout.addWidget(title, 0, 0)  # и добавляем его в grid_layout
 
         exit_action = QAction("&Exit", self)  # Создаём Action exit
         exit_action.setShortcut("Ctrl+Q")  # Задаём для него хоткей
-        exit_action.triggered.connect(
-            qApp.quit)  # Подключаем сигнал к слоту qApp.quit
+        exit_action.triggered.connect(qApp.quit)  # Подключаем сигнал к слоту qApp.quit
 
         # Панель Меню
         file_menu = self.menuBar()  # Создаем меню

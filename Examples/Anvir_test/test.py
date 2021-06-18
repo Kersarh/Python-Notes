@@ -6,4 +6,4 @@ str2 = "STANDARD-ANTIVIRUS-TEST-FILE!"
 str3 = "$H+H*"
 
 with open("test.txt", "w") as f:
-	f.write(str1+str2+str3)
+    f.write(str1 + str2 + str3)

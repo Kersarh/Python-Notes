@@ -4,7 +4,7 @@ import sys
 
 
 def is_admin():
-    """ Проверяем права"""
+    """Проверяем права"""
     try:
         # Если админ вернет True
         return ctypes.windll.shell32.IsUserAnAdmin()
@@ -18,11 +18,15 @@ if is_admin():
 
 else:
     # Перезапускаем скрипт с правами админа
-    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable,
-                                        __file__, None, 1)
+    ctypes.windll.shell32.ShellExecuteW(
+        None, "runas", sys.executable, __file__, None, 1
+    )
     exit()  # выходим из старой версии скрипта
 
 print("your code...")
 
-os.system("pause" if os.name == "nt" else
-          """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'""")
+os.system(
+    "pause"
+    if os.name == "nt"
+    else """bash -c 'read -s -n 1 -p "Press any key to continue...\n"'"""
+)

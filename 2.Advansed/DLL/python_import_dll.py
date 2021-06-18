@@ -1,6 +1,6 @@
-'''
+"""
 Подключение DLL файлов.
-'''
+"""
 
 import ctypes
 
@@ -17,14 +17,14 @@ lib.PrintData()
 lib2 = ctypes.CDLL("./NAME.dll")
 x = lib2.SumData(5)
 print(x)
-'''
+"""
 Бывает что необходимо получить доступ к функции или атрибуту DLL,
 имя которого Python не распознает.
 На этот случай имеется функция:
 getattr(lib, attr_name)
 Данная функция принимает два аргумента:
 объект библиотеки и имя атрибута, а возвращает объект атрибута.
-'''
+"""
 
 lib = ctypes.cdll.LoadLibrary(r"C:\Windows\System32\msvcrt.dll")
 num = 10

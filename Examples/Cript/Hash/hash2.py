@@ -28,32 +28,34 @@ ps_inp = "MY_PASSWORD"
 h2 = hashlib.md5(ps_inp.encode())
 ps2 = h2.hexdigest()
 if ps == ps2:  # сравнение с хешем в базе
-    print('Верно')
+    print("Верно")
 else:
     print("Пароли не совпадают")
 
 
 # KDF
-salt = os.urandom(32) # !Не забываем сохранить соль
-password = 'MY_PASSWORD'
- 
+salt = os.urandom(32)  # !Не забываем сохранить соль
+password = "MY_PASSWORD"
+
 key = hashlib.pbkdf2_hmac(
-    'sha256', # алгоритм хеширования
-    password.encode(), # пароль в byte
-    salt, # соль
-    100000, # кол-во итераций 
-    dklen=128) # длинна ключа
+    "sha256",  # алгоритм хеширования
+    password.encode(),  # пароль в byte
+    salt,  # соль
+    100000,  # кол-во итераций
+    dklen=128,
+)  # длинна ключа
 
 # Проверка пароля
 new_pass = "MY_PASSWORD"
 new_key = hashlib.pbkdf2_hmac(
-    'sha256', # алгоритм хеширования
-    new_pass.encode(), # пароль в byte
-    salt, # соль
-    100000, # кол-во итераций 
-    dklen=128) # длинна ключа
+    "sha256",  # алгоритм хеширования
+    new_pass.encode(),  # пароль в byte
+    salt,  # соль
+    100000,  # кол-во итераций
+    dklen=128,
+)  # длинна ключа
 
 if new_key == key:  # сравнение с хешем в базе
-    print('Верно')
+    print("Верно")
 else:
     print("Пароли не совпадают")

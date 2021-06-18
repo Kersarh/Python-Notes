@@ -2,6 +2,7 @@
 
 from cryptography.fernet import Fernet
 
+
 def generate_key():
     """
     Создаем ключ и записываем в файл
@@ -10,12 +11,14 @@ def generate_key():
     with open("secret.key", "wb") as key_file:
         key_file.write(key)
 
+
 def load_key():
     """
     Загружаем ключ из директории
     """
     key = open("secret.key", "rb").read()
     return key
+
 
 def encrypt_message(message):
     """
@@ -28,6 +31,7 @@ def encrypt_message(message):
 
     return encrypted_message
 
+
 def decrypt_message(msg):
     """
     Дешифруем собщение
@@ -38,10 +42,11 @@ def decrypt_message(msg):
     decrypted_message = f.decrypt(msg)
     return decrypted_message
 
+
 if __name__ == "__main__":
     data_for_cript = "My Secret Message!"
     cript_data = ""
-    while True:     
+    while True:
         a = input("\n1 - Шифрование: \n2 - Дешифрование:\n")
         if a == "1":
             generate_key()

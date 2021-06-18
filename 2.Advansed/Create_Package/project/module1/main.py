@@ -4,4 +4,3 @@ def get_message(s):
 
 def print_message():
     print(get_message("Hello World!"))
-

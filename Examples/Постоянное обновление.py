@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 import datetime
+
 """ Часы с обновлением в текущей строке """
 import time
 

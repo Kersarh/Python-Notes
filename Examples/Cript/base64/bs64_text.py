@@ -13,7 +13,7 @@ print("utf-8 > bs16:", bs16enc)
 print("utf-8 > bs32:", bs32enc)
 print("utf-8 > bs64:", bs64enc)
 
-# Декодирование 
+# Декодирование
 # .decode() преобразование из byte в utf-8
 bs16decode = base64.b16decode(bs16enc).decode()
 bs32decode = base64.b32decode(bs32enc).decode()

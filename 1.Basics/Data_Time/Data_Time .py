@@ -1,11 +1,12 @@
-'''
+"""
 Использование модуля datetime
-'''
+"""
 
 import datetime
 
 # timedelta — дата в виде количества дней, секунд и микросекунд.
-# Экземпляр этого класса можно складывать с экземплярами классов date и datetime.
+# Экземпляр этого класса можно складывать
+# с экземплярами классов date и datetime.
 # Кро-ме того, результат вычитания двух дат будет экземпляром класса timedelta;
 # timedelta([days[, seconds[, microseconds[, milliseconds[, minutes [, hours[, weeks]]]]]]])
 
@@ -16,7 +17,7 @@ datetime.timedelta(minutes=1)
 datetime.timedelta(hours=1)
 # >>> datetime.timedelta(0, 3600)
 
-# можно сравнивать умнодать делить и тд.
+# можно сравнивать умножать делить и тд.
 d1 = datetime.timedelta(days=1, hours=2)
 d2 = datetime.timedelta(days=7, minutes=3)
 print(d1 + d2)

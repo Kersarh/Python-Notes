@@ -5,13 +5,13 @@ import prog
 class MyTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        """ До начала тестирования """
+        """До начала тестирования"""
         print(">>> Начало тестирования! <<<")
         print("==========")
 
     @classmethod
     def tearDownClass(cls):
-        """ После всех тестов """
+        """После всех тестов"""
         print("\n==========")
         print(">>> Конец тестирования <<<")
 

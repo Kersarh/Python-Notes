@@ -1,6 +1,6 @@
-'''
+"""
 Импортирование модулей
-'''
+"""
 
 import os
 import sys
@@ -36,11 +36,11 @@ obj = __import__("fun2")
 obj.fun()
 
 # Импорт из ZIP архива
-sys.path.insert(0, 'MyZipMod.zip')
+sys.path.insert(0, "MyZipMod.zip")
 import mymod1
 
 mymod1.func1()
 print(mymod1.__file__)
 
 print(">> Директории для поиска модулей <<")
-print(*sys.path, sep='\n')
+print(*sys.path, sep="\n")

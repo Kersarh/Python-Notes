@@ -65,7 +65,7 @@ def decrypt_message_to_file(key):
     return data.decode()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     data = "my secret data!"  # Сообщение
     key = generate_key()  # Генерация ключа
 

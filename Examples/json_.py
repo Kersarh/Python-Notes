@@ -1,14 +1,8 @@
 import json
 
 data = {
-    "User": {
-        "name": "admin",
-        "specialization": "Full"
-    },
-    "User2": {
-        "name": "user",
-        "specialization": "none"
-    }
+    "User": {"name": "admin", "specialization": "Full"},
+    "User2": {"name": "user", "specialization": "none"},
 }
 
 # Запись в файл

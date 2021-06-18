@@ -1,6 +1,6 @@
-'''
+"""
 Наследование позволяет создавать новый класс на основе уже существующего класса.
-'''
+"""
 
 
 # Родительский класс
@@ -55,13 +55,13 @@ print(obj.prnt())  # Class Base1
 # Родительский класс
 class A:
     def prt(self):
-        return ("class A")
+        return "class A"
 
 
 # Дочерний класс
 class B(A):
     def prt(self):
-        return ("class B")
+        return "class B"
 
     def fun(self):
         print(self.prt())  # метод prt класса B

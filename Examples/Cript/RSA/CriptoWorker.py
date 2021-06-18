@@ -217,7 +217,9 @@ class CriptoWorker:
         plaintext = obj.decrypt(ciphertext)
         plaintext = plaintext[16:]
         # Провека сигнатуры
-        verification = self.checkSignature(message, plaintext, bobprivate, alisepublic, privatePwd=privatePwd)
+        verification = self.checkSignature(
+            message, plaintext, bobprivate, alisepublic, privatePwd=privatePwd
+        )
         return [plaintext, verification]
 
     def saveMsgToFile(self, message: dict, file: str) -> None:

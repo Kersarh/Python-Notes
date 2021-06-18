@@ -1,12 +1,11 @@
-'''
+"""
 Простое логирование
-'''
+"""
 import logging
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format=
-    "[%(asctime)s] # %(levelname)-8s # %(filename)s # [LINE:%(lineno)d] # %(message)s",
+    format="[%(asctime)s] # %(levelname)-8s # %(filename)s # [LINE:%(lineno)d] # %(message)s",
 )  # Для вывода в файл filename=u'mylog.log'
 
 # Сообщение отладочное

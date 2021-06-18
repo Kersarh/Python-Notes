@@ -1,8 +1,8 @@
-'''
+"""
 setup.py - параметры для сборки пакетов
-'''
+"""
 
-#from setuptools import setup
+# from setuptools import setup
 from distutils.core import setup  # для whl
 from os.path import dirname, join
 
@@ -22,5 +22,5 @@ setup(
         # Теперь можно вызвать mypckg в консоли.
         # Будет выполнен module1.main:print_message
     },
-    test_suite='tests',  # Подключаем тесты 'python setup.py test'
+    test_suite="tests",  # Подключаем тесты 'python setup.py test'
 )

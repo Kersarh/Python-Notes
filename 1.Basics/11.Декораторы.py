@@ -1,9 +1,9 @@
-'''
+"""
 Декоратор — это функция, которая позволяет обернуть другую функцию
 для расширения её функциональности без непосредственного изменения кода.
 decorator — синтаксический сахар для конструкций вида:
 function = my_decorator(my_function)
-'''
+"""
 import time
 
 
@@ -19,7 +19,7 @@ def benchmark(fn):
         start = time.time()
         fn()
         end = time.time()
-        print('[*] Время выполнения: {} секунд.'.format(end - start))
+        print("[*] Время выполнения: {} секунд.".format(end - start))
         return fn()
 
     return wrapper
@@ -42,7 +42,7 @@ def benchmark2(func):
         return_value = func(*args, **kwargs)
         print("arg =", return_value)
         end = time.time()
-        print('[*] Время выполнения: {} секунд.'.format(end - start))
+        print("[*] Время выполнения: {} секунд.".format(end - start))
         return return_value
 
     return wrapper
@@ -53,4 +53,4 @@ def func2(text):
     return text
 
 
-print(func2('HELLO'))
+print(func2("HELLO"))

@@ -1,6 +1,6 @@
-'''
+"""
 Логирование
-'''
+"""
 import logging
 
 # Создаём logger
@@ -12,8 +12,7 @@ handl = logging.StreamHandler()
 handl.setLevel(logging.DEBUG)
 
 # Задаем формат
-formatter = logging.Formatter(
-    "%(asctime)s -- %(name)s -- %(levelname)s -- %(message)s")
+formatter = logging.Formatter("%(asctime)s -- %(name)s -- %(levelname)s -- %(message)s")
 
 # Добавляем формат
 handl.setFormatter(formatter)

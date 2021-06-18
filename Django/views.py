@@ -15,7 +15,7 @@ from django.contrib.postgres.search import (
 
 
 class ListAll(ListView):
-    """ Return all posts """
+    """Return all posts"""
 
     model = Post
     paginate_by = 5
@@ -63,13 +63,13 @@ class DetailPost(DetailView):
 
 
 def static_pages(request, slug=None):
-    """ Static Pages """
+    """Static Pages"""
     page = get_object_or_404(StaticPage.objects.filter(slug=slug))
     return render(request, "blog/partial/static_page.html", {"object": page})
 
 
 class ListTags(ListView):
-    """ Список тегов """
+    """Список тегов"""
 
     model = BlogTags
     paginate_by = 5
@@ -87,7 +87,7 @@ class ListTags(ListView):
 
 
 class Search(ListView):
-    """ Для поиска требуется POSTGRESQL!!! """
+    """Для поиска требуется POSTGRESQL!!!"""
 
     model = Post
     paginate_by = 10
@@ -97,16 +97,17 @@ class Search(ListView):
         queryset = super(Search, self).get_queryset()
         q = self.request.GET.get("q")
         if q:
-            vector = SearchVector("title",
-                                  "content",
-                                  raw=True,
-                                  fields=("title"))
+            vector = SearchVector("title", "content", raw=True, fields=("title"))
             vector_trgm = TrigramSimilarity(
-                "title", q, raw=True, fields=("title")) + TrigramSimilarity(
-                    "content", q, raw=True, fields=("content"))
+                "title", q, raw=True, fields=("title")
+            ) + TrigramSimilarity("content", q, raw=True, fields=("content"))
             a = queryset.annotate(search=vector).order_by("title").filter(
-                search=q) or queryset.annotate(similarity=vector_trgm).filter(
-                    similarity__gt=0.1).order_by("title")
+                search=q
+            ) or queryset.annotate(similarity=vector_trgm).filter(
+                similarity__gt=0.1
+            ).order_by(
+                "title"
+            )
             if not a:  # Если НЕ найдено
                 self.template_name = "blog/partial/not_found.html"
                 return ["Not Found!"]
@@ -117,8 +118,8 @@ class Search(ListView):
             return ["Empty Search String."]
 
     def get_context_data(self, **kwargs):
-        """ Добавляет в контекст параметр q из Get запроса
-        Необходим для корректной работы пагинации в поиске """
+        """Добавляет в контекст параметр q из Get запроса
+        Необходим для корректной работы пагинации в поиске"""
         context = super().get_context_data(**kwargs)
         context["q"] = self.request.GET.get("q", 2)
         return context

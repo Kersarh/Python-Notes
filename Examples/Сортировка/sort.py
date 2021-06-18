@@ -12,14 +12,20 @@ un_sort = "__unsorted__"
 folders = {
     "Видео": [".avi", ".flv", ".m4v", ".mkv"],
     "Музыка": [".mp3", ".flac"],
-    "Изображения":
-    [".raw", ".jpg", ".jpeg", ".tiff", ".psd", ".bmp", ".gif", ".png"],
+    "Изображения": [".raw", ".jpg", ".jpeg", ".tiff", ".psd", ".bmp", ".gif", ".png"],
     "Документы": [
-        ".doc", ".docx", ".txt", ".rtf", ".pdf", ".fb2", ".djvu", ".xls",
-        ".xlsx"
+        ".doc",
+        ".docx",
+        ".txt",
+        ".rtf",
+        ".pdf",
+        ".fb2",
+        ".djvu",
+        ".xls",
+        ".xlsx",
     ],
     "Архивы": [".rar", ".zip", ".7z"],
-    un_sort: []
+    un_sort: [],
 }
 
 type_os = platform.system()  # Платформа
@@ -27,7 +33,7 @@ usernane = getpass.getuser()  # Имя пользователя
 
 
 def create_dirs(sort_dir=sort_dir, folders=folders):
-    ''' Создаем под директории '''
+    """Создаем под директории"""
     for dirs in folders:
         new_dirs = Path(dirs)
         try:
