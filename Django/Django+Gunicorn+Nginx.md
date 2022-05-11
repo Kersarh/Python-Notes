@@ -108,6 +108,7 @@ After=nginx.service
 
 [Service]
 Type=forking
+WorkingDirectory=/opt/my_site/myproject/ # где manage.py
 ExecStart=/opt/my_site/env/bin/gunicorn myproject.wsgi:application -c /opt/my_site/myproject/myproject/gunicorn.conf.py
 Restart=always
 
