@@ -1,6 +1,6 @@
 """
->>> 	Warning 	<<<
->>> 	PYTHON 3.9+ 	<<<
+>>>     Warning     <<<
+>>>     PYTHON 3.9+     <<<
 
 Python динамически типизирован, то есть нам не нужно указывать типы данных в нашем коде.
 Но иногда требуется указать ожидаемое значение
@@ -29,3 +29,10 @@ def add_num2(n: int) -> int:
 
 print(add_num2(10))
 # print(add_num2("TEXT"))  # Вызовет ошибку
+
+
+# >>>     PYTHON 3.10+     <<<
+
+# n может быть int или float
+def func(n: int | float) -> int | float:
+    return n
