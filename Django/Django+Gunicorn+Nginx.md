@@ -4,29 +4,36 @@
 
 ```bash
 apt install python3
+apt install libpq-dev python3-dev
 apt install python3-pip
 apt install nginx
 apt install nano
+apt install postgresql postgresql-contrib
+
 pip3 install django
 pip3 install gunicorn
+
+# опционально
+pip install django-crispy-forms
+pip install psycopg2
 ```
 
-### Создаем наш проект
+### Создаем проект или переносим готовый
 
 ```bash
-django-admin.py startproject myproject
+django-admin.py startproject mySite
 ```
 не забываем про collectstatic перед выкладкой, чтобы nginx мог ее корректно подгружать.
 ```bash
 python3 manage.py collectstatic
 ```
-Проект лучше создавать в виртуальном окружении.
+Проект лучше создавать c использованием виртуального окружения.
 
 ### Проверяем gunicorn
 
 Из папки проекта там где лежит manage.py запускаем gunicorn указав Ваш IP
 ```bash
-gunicorn myproject.wsgi:application --bind 111.111.111.111:8000
+gunicorn mySite.wsgi:application --bind 111.111.111.111:8000
 ```
 
 При этом сайт будет отображаться без статических файлов это нормально!
@@ -39,7 +46,7 @@ killall gunicorn
 ### Создадим конфиг файл для gunicorn
 
 ```bash
-cd /opt/my_site/myproject/myproject` # каталог с settings.py
+cd /opt/mySite/mySite/` # каталог с settings.py
 touch gunicorn.conf.py
 ```
 Открываем
@@ -72,7 +79,7 @@ server {
     access_log  /var/log/nginx/site.log;
 
     location /static/ {
-        root /opt/my_site/myproject/;  # где manage.py
+        root /opt/mySite/;  # где manage.py
         expires 30d;
     }
 
@@ -97,19 +104,19 @@ service nginx restart
 
 ```bash
 cd /etc/systemd/system/
-touch myproject.service
-nano myproject.conf
+touch mySite.service
+nano mySite.service
 ```
 Содержимое файла:
 ```
 [Unit]
-Description=My_Project
+Description=mySite
 After=nginx.service
 
 [Service]
 Type=forking
-WorkingDirectory=/opt/my_site/myproject/ # где manage.py
-ExecStart=/opt/my_site/env/bin/gunicorn myproject.wsgi:application -c /opt/my_site/myproject/myproject/gunicorn.conf.py
+WorkingDirectory=/opt/mySite/ # где manage.py
+ExecStart=/opt/mySite/env/bin/gunicorn mySite.wsgi:application -c /opt/mySite/mySite/gunicorn.conf.py
 Restart=always
 
 [Install]
@@ -119,9 +126,9 @@ WantedBy=multi-user.target
 Проверяем статус и подключаем его и запускаем:
 
 ```bash
-systemctl status myproject
-systemctl enable myproject
-systemctl start myproject
+systemctl status mySite.service
+systemctl enable mySite.service
+systemctl start mySite.service
 ```
 
 
@@ -135,25 +142,25 @@ apt install supervisor
 создадим конфиг супервизора и отредактируем его
 ```bash
 cd /etc/supervisor/conf.d/
-touch myproject.conf
-nano myproject.conf
+touch mySite.conf
+nano mySite.conf
 ```
 
 Пишем наш конфиг
 ```text
 [program:myproject]
-command=/opt/my_site/env/bin/gunicorn myproject.wsgi:application -c /opt/my_site/myproject/myproject/gunicorn.conf.py
-directory=/opt/my_site/myproject
+command=/opt/mySite/env/bin/gunicorn mySite.wsgi:application -c /opt/mySite/mySite/gunicorn.conf.py
+directory=/opt/mySite/myproject
 user=nobody
 autorestart=true
 redirect_stderr=true
 ```
 
-### Команды для supervisor
+Команды для supervisor
 
 ```bash
 supervisorctl reread
 supervisorctl update
-supervisorctl status myproject
-supervisorctl restart myproject
+supervisorctl status mySite
+supervisorctl restart mySite
 ```
